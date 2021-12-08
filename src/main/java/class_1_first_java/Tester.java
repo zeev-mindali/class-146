@@ -6,13 +6,9 @@ public class Tester {
     //the java will run this method first.....
     public static void main(String[] args) {
 
-        int x = 4, y = 5;
-        boolean res;
+        int num1=4,num2=9;
 
-        res = x>5; //false
-        System.out.println(res);
-        res = !(x>5); //true
-        System.out.println(res);
+        if (num1>num2) System.out.println("num1 is bigger"); else System.out.println("num2 is bigger");
 
 
 
