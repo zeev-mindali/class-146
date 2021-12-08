@@ -26,6 +26,6 @@ public class Targil_kita {
 
         System.out.println("your input is "+result);
 
-        //stam
+        //hello
     }
 }
