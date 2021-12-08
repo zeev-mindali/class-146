@@ -1,19 +1,20 @@
 package class_1_first_java;
 
+import java.util.Scanner;
+
 public class Tester {
     //the java will run this method first.....
     public static void main(String[] args) {
-        //start
-        // remark line
-        System.out.println("Hello world !!!!!");
-        System.out.println("=================");
-        System.out.println("Hello Class 146");
-        /*
-            this is my first program
-            now i have someting to show mom
-            i will write google
-         */
 
-        //end
+        int x = 4, y = 5;
+        boolean res;
+
+        res = x>5; //false
+        System.out.println(res);
+        res = !(x>5); //true
+        System.out.println(res);
+
+
+
     }
 }
