@@ -5,6 +5,6 @@ public class BankTester {
         Bank bank = new Bank();
         System.out.println(bank.login("admin","zeev"));
 
-        System.out.println(bank.givePassword());
+        //System.out.println(bank.givePassword());
     }
 }
