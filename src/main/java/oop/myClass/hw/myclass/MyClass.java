@@ -1,4 +1,4 @@
-package oop;
+package oop.myClass.hw.myclass;
 
 import java.sql.Date;
 

@@ -1,4 +1,4 @@
-package oop.hw.targil2;
+package oop.myClass.hw.myclass.targil2;
 
 import java.util.Scanner;
 

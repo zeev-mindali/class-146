@@ -1,4 +1,4 @@
-package oop;
+package oop.myClass.hw.myclass;
 
 public class Bank {
     private String name="admin";
