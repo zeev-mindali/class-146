@@ -15,6 +15,7 @@ public class loops_targil5 {
             digit1=tempNumber%10;
             digit2=tempNumber%100/10;
             newNumber+=(digit1*10+digit2)*location;
+            //newNumber+=(tempNumber%10*10+tempNumber%100/10)*location;
             location*=100;
             tempNumber/=100;
             if (tempNumber<10){
