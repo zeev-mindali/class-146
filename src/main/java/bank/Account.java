@@ -1,20 +1,19 @@
 package bank;
 
-public class Account {
+public abstract class Account {
     protected String accountNumber;
     protected String accountOwner;
     protected int creditLimit;
     protected int commision;
     protected double loan;
     protected double balance;
-    protected boolean canLoan;
 
-    public Account(String accountNumber, String accountOwner, int creditLimit, int commision, boolean canLoan) {
+
+    public Account(String accountNumber, String accountOwner, int creditLimit, int commision) {
         this.accountNumber = accountNumber;
         this.accountOwner = accountOwner;
         this.creditLimit = creditLimit;
         this.commision = commision;
-        this.canLoan = canLoan;
     }
 
     public void deposit(int amount){
@@ -31,7 +30,7 @@ public class Account {
     }
 
     public boolean takeLoan(int amount){
-        if (this.canLoan){
+        if (this instanceof Loanable){
             double totalLoan = creditLimit*(1+this.commision/100.0);
             if (this.balance-totalLoan>this.creditLimit){
                 this.loan = totalLoan;
@@ -70,10 +69,6 @@ public class Account {
         this.creditLimit = creditLimit;
     }
 
-    public void setCanLoan(boolean canLoan) {
-        this.canLoan = canLoan;
-    }
-
     public String getAccountNumber() {
         return accountNumber;
     }
@@ -99,6 +94,11 @@ public class Account {
     }
 
     public boolean isCanLoan() {
-        return canLoan;
+        return this instanceof Loanable;
     }
+
+    public abstract boolean issueCreditCard();
+
+
+
 }
