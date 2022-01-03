@@ -47,7 +47,13 @@ public class Clock {
 
     @Override
     public String toString() {
+        String ampm="";
         int myHour = this.hour%format;
-        return (myHour<10?"0"+myHour:myHour)+":"+(minute<10?"0"+minute:minute);
+        if (format==12){
+            ampm=hour<12?"AM":"PM";
+        } else {
+            ampm="";
+        }
+        return (myHour<10?"0"+myHour:myHour)+":"+(minute<10?"0"+minute:minute)+" "+ampm;
     }
 }
