@@ -1,6 +1,6 @@
 package targil_oop;
 
-public class Manager extends Employee{
+public class Manager extends Employee implements Managerable{
     protected String department;
 
 
