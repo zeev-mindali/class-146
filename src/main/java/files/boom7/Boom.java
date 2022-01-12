@@ -3,6 +3,7 @@ package files.boom7;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
+import java.util.Objects;
 
 public class Boom {
     private int maxNumber;
@@ -52,6 +53,5 @@ public class Boom {
         }
         return false;
     }
-
 
 }
