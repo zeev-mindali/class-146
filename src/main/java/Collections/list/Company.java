@@ -17,4 +17,8 @@ public class Company {
         }
         return returnAvg/ employees.size();
     }
+
+    public List<Employee> getEmployees(){
+        return this.employees;
+    }
 }
