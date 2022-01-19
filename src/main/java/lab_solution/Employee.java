@@ -1,6 +1,7 @@
 package lab_solution;
 
 import java.text.DecimalFormat;
+import java.util.Locale;
 
 public class Employee {
     protected String name;
@@ -21,7 +22,7 @@ public class Employee {
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.name = name.toLowerCase();
     }
 
     public double getSalary() {

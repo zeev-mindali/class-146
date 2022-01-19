@@ -18,6 +18,7 @@ public class CompanyTester {
         emptyCompany = new Company("Empty Company");
         company.addEmployee(new Employee("Zeev",25_000));
         company.addEmployee(new Manager("Golan telcom",75_000,"Zimer"));
+       // company.addEmployee(new Employee("Tal",25_000));
     }
 
     @Test
