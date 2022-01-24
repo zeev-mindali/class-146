@@ -18,7 +18,10 @@ public class Engineer extends Employee {
         return stringBuilder.toString();
     }
 
-    public String getSpecialty() {
+    public String getSpecialty() throws Exception {
+        if (specialty==null){
+            throw new Exception("Field is empty");
+        }
         return specialty;
     }
 

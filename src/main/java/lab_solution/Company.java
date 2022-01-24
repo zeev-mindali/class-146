@@ -39,12 +39,15 @@ public class Company {
     }
 
     //statistical methods1
-    public double getAverageSalary() throws ArithmeticException{
+    public double getAverageSalary() throws NoEmployeesException{
         double avg = 0;
         for (Employee employee : this.employees) {
             avg += employee.getSalary();
         }
         //return employees.size()==0?0:avg/this.employees.size();
+        if (employees.size()==0){
+            throw new NoEmployeesException("There is no employees in the company");
+        }
         return avg / employees.size();
     }
 
@@ -59,15 +62,17 @@ public class Company {
         return avg / getTotalNumOfManagers();
     }
 
-    public double getYearlyPayment(){
+    public double getYearlyPayment() throws NoEmployeesException {
+        /*
         double sum = 0;
         for (Employee employee:employees){
             sum+=employee.getSalary();
         }
         return sum*12;
+        */
 
         //Yoav style
-        //return getAverageSalary()*employees.size()*12;
+        return getAverageSalary()*employees.size()*12;
     }
 
     public int getTotalNumOfEmployees(){
@@ -82,5 +87,13 @@ public class Company {
             }
         }
         return counter;
+    }
+
+    public boolean hasEmployees(){
+        return this.employees.size()>0;
+    }
+
+    public boolean Geri(){
+        return true;
     }
 }
