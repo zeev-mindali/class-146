@@ -34,14 +34,18 @@ public class ConnectionPool {
         }
     }
 
-    public static ConnectionPool getInstance() throws SQLException {
+    public static ConnectionPool getInstance()  {
         //first we check that instance is null
         if (instance==null){
             //syncronized-critical code , that another thread will not pass here
             synchronized (ConnectionPool.class){
                 //double check, that no other thread create an instance.....
                 if (instance==null){
-                    instance = new ConnectionPool();
+                    try {
+                        instance = new ConnectionPool();
+                    } catch (SQLException err) {
+                        System.out.println(err.getMessage());
+                    }
                 }
             }
         }
