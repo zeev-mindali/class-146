@@ -1,7 +1,7 @@
 package air_port;
 
 public class Airport {
-    private final static int TOTAL_PLANES = 20;
+    private final static int TOTAL_PLANES = 10;
     private Thread[] planes = new Thread[TOTAL_PLANES];
     private AirPlane[] airPlanes = new AirPlane[TOTAL_PLANES];
     private String name;
