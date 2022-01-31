@@ -1,11 +1,15 @@
 package drones.dao;
 
+import drones.beans.Customer;
+
+import java.util.List;
+
 public interface CustomerDao {
     //CRUD -> Create Read Update Delete
-    boolean addCustomer(String name, String phone, String city, boolean vip, boolean urgent);
+    boolean addCustomer(Customer customer);
     void deleteCustomer(int id);
-    boolean updateCustomer(String name, String phone, String city, boolean vip, boolean urgent,int id);
+    boolean updateCustomer(Customer customer);
 
-    void getAllCustomers();
-    void getCustomerById(int id);
+    List<Customer> getAllCustomers();
+    Customer getCustomerById(int id);
 }

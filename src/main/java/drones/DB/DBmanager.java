@@ -29,5 +29,15 @@ public class DBmanager {
             "  `entered` DATETIME NULL," +
             "  PRIMARY KEY (`id`))";
 
+    public static final String CREATE_NEW_CUSTOMER = "INSERT INTO `drone_lab`.`customers` " +
+            "(`name`, `phone`, `city`, `vip`, `urgent`) " +
+            "VALUES (?,?,?,?,?)";
 
+    public static final String DELETE_CUSTOMER = "DELETE FROM `drone_lab`.`customers` WHERE id=?";
+
+    public static final String UPDATE_CUSTOMER = "UPDATE `drone_lab`.`customers` " +
+            "SET name=?, phone=?, city=?, vip=?, urgent=? " +
+            "WHERE id=?";
+
+    public static final String GET_ALL_CUSTOMER = "SELECT * FROM `drone_lab`.`customers`";
 }
