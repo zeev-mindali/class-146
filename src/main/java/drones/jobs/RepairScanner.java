@@ -4,16 +4,17 @@ import drones.beans.Drones;
 
 import java.sql.Date;
 import java.util.List;
+import java.util.Set;
 
-public class repair_scanner implements Runnable{
+public class RepairScanner implements Runnable{
     //two types of parameters
     //by val -> primitive types (String,boolean,int,double,float,etc...)->Stack
     //by ref -> instances -> heap
 
-    private List<Drones> drones;
+    private Set<Drones> drones;
     private boolean isRunning;
 
-    public repair_scanner(List<Drones> drones) {
+    public RepairScanner(Set<Drones> drones) {
         this.drones = drones;
         this.isRunning=true;
     }

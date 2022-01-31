@@ -3,13 +3,15 @@ package drones;
 import drones.DB.DBmanager;
 import drones.DB.DBtools;
 import drones.beans.Customer;
+import drones.beans.Drones;
 import drones.dao.CustomerDao;
+import drones.dao.DroneDao;
 import drones.dbdao.Customer_mysql;
+import drones.dbdao.Drone_mysql;
+import drones.jobs.RepairScanner;
 
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class MyDroneLab {
     public static void main(String[] args) {
@@ -41,5 +43,33 @@ public class MyDroneLab {
         List<Customer> allCustomers = dbCustomer.getCustomers(DBmanager.GET_ALL_CITY,values);
         allCustomers.forEach(System.out::println);
 
+
+        //running thread...
+        Drone_mysql dronesDBdao = new Drone_mysql();
+        Set<Drones> drones = dronesDBdao.getAllDrones();
+
+        //RUNNABLE !!!!!!
+        RepairScanner droneScanner = new RepairScanner(drones);
+        //THREAD !!!!!
+        Thread theScanner = new Thread(droneScanner);
+        //START THE B****
+        theScanner.start();
+
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

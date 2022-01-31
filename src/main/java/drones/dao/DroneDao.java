@@ -2,7 +2,7 @@ package drones.dao;
 
 import drones.beans.Drones;
 
-import java.sql.Date;
+import java.util.Set;
 
 public interface DroneDao {
     //merage createDrone and update drone into one single method
@@ -11,7 +11,7 @@ public interface DroneDao {
 
     void deleteDrone(int id);
 
-    void getAllDrones();
+    Set<Drones> getAllDrones();
 
 
 

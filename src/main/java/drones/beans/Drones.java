@@ -2,7 +2,7 @@ package drones.beans;
 
 import java.sql.Date;
 
-public class Drones {
+public class Drones implements Comparable<Drones>{
     private int id;
     private int clientId;
     private String manufactor;
@@ -86,5 +86,14 @@ public class Drones {
 
     public void setPoped(boolean poped) {
         isPoped = poped;
+    }
+
+    @Override
+    public int compareTo(Drones o) {
+        if (o.getEntered().before(this.entered)){
+            return 1;
+        } else {
+            return -1;
+        }
     }
 }

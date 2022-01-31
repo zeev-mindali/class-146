@@ -5,9 +5,10 @@ import drones.DB.DBtools;
 import drones.beans.Drones;
 import drones.dao.DroneDao;
 
-import java.sql.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class Drone_mysql implements DroneDao {
     @Override
@@ -36,7 +37,9 @@ public class Drone_mysql implements DroneDao {
     }
 
     @Override
-    public void getAllDrones() {
-
+    public Set<Drones> getAllDrones() {
+        //create a comperator
+        Set<Drones> drones = new TreeSet<>();
+        return null;
     }
 }
