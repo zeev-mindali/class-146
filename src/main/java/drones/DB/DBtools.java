@@ -5,10 +5,9 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class DBtools {
-    public static void runQuery(String sql) throws SQLException {
+    public static boolean runQuery(String sql)  {
         //use connection from connection sql to send queries to our db
         Connection connection = null;
-
         try{
             //get a connection for connection pool
             connection = ConnectionPool.getInstance().getConnection();
@@ -18,8 +17,11 @@ public class DBtools {
 
             //run statement
             statement.execute();
-        } catch (InterruptedException err) {
+
+            return true;
+        } catch (InterruptedException | SQLException err) {
             System.out.println(err.getMessage());
+            return false;
         } finally {
             ConnectionPool.getInstance().returnConnection(connection);
         }

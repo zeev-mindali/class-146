@@ -52,6 +52,15 @@ public class ConnectionPool {
         return instance;
     }
 
+    /*
+    public static ConnectionPool getInstanceBad() throws SQLException {
+        if (instance==null){
+            instance = new ConnectionPool();
+        }
+        return instance;
+    }
+    */
+
     public void showMeTheMoney(){
         System.out.println("$$$$$$$$$$$$");
     }
