@@ -9,6 +9,7 @@ public class Drones {
     private String model;
     private Date eta;
     private Date entered;
+    private boolean isPoped;
 
     public Drones(int id, int clientId, String manufactor, String model, Date eta, Date entered) {
         this.id = id;
@@ -17,6 +18,7 @@ public class Drones {
         this.model = model;
         this.eta = eta;
         this.entered = entered;
+        this.isPoped=false;
     }
 
     public Drones() {
@@ -76,5 +78,13 @@ public class Drones {
                 ", eta=" + eta +
                 ", entered=" + entered +
                 '}';
+    }
+
+    public boolean isPoped() {
+        return isPoped;
+    }
+
+    public void setPoped(boolean poped) {
+        isPoped = poped;
     }
 }
