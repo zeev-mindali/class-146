@@ -1,16 +1,18 @@
 package drones.dao;
 
+import drones.beans.Drones;
+
 import java.sql.Date;
 
 public interface DroneDao {
-    //crud
-    boolean createDrone(int clientId, String manufactor, String model, Date eta, Date entered);
-    boolean updateDrone(int clientId, String manufactor, String model, Date eta, Date entered,int id);
+    //merage createDrone and update drone into one single method
+    boolean createDrone(Drones drone);
+    boolean updateDrone(Drones drone);
 
-    void deleteDron(int id);
+    void deleteDrone(int id);
 
     void getAllDrones();
-    void getDroneById(int id);
+
 
 
 }

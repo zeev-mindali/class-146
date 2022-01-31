@@ -63,4 +63,16 @@ public class Customer {
     public void setUrgent(boolean urgent) {
         this.urgent = urgent;
     }
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", phone='" + phone + '\'' +
+                ", city='" + city + '\'' +
+                ", vip=" + vip +
+                ", urgent=" + urgent +
+                '}';
+    }
 }

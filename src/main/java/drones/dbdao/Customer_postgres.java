@@ -33,13 +33,9 @@ public class Customer_postgres implements CustomerDao {
     }
 
     @Override
-    public List<Customer> getAllCustomers() {
+    public List<Customer> getCustomers(String sql, Map<Integer, Object> values) {
         return null;
     }
 
-    @Override
-    public Customer getCustomerById(int id) {
-        return null;
-    }
 
 }

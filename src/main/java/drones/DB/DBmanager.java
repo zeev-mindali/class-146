@@ -40,4 +40,11 @@ public class DBmanager {
             "WHERE id=?";
 
     public static final String GET_ALL_CUSTOMER = "SELECT * FROM `drone_lab`.`customers`";
+    public static final String GET_SINGLE_CUSTOMER = "SELECT * FROM `drone_lab`.`customers` WHERE id=?";
+    public static final String GET_ALL_CITY = "SELECT * FROM `drone_lab`.`customers` WHERE city=?";
+
+    public static final String CREATE_DRONE = "INSERT INTO `drone_lab`.`drones` " +
+            "(`client_id`, `manufactor`, `model`, `eta`, `entered`) " +
+            "VALUES (?,?,?,?,?)";
+
 }

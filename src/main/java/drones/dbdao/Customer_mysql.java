@@ -43,43 +43,48 @@ public class Customer_mysql implements CustomerDao {
 
         //Omer today
         Map<Integer, Object> values = new HashMap<>();
-        values.put(1,customer.getName());
-        values.put(2,customer.getPhone());
-        values.put(3,customer.getCity());
-        values.put(4,customer.isVip());
-        values.put(5,customer.isUrgent());
+        values.put(1, customer.getName());
+        values.put(2, customer.getPhone());
+        values.put(3, customer.getCity());
+        values.put(4, customer.isVip());
+        values.put(5, customer.isUrgent());
 
-        return DBtools.runQuery(DBmanager.CREATE_NEW_CUSTOMER,values);
+        return DBtools.runQuery(DBmanager.CREATE_NEW_CUSTOMER, values);
     }
 
     @Override
     public void deleteCustomer(int id) {
         Map<Integer, Object> values = new HashMap<>();
-        values.put(1,id);
-        DBtools.runQuery(DBmanager.DELETE_CUSTOMER,values);
+        values.put(1, id);
+        DBtools.runQuery(DBmanager.DELETE_CUSTOMER, values);
     }
 
     @Override
     public boolean updateCustomer(Customer customer) {
         Map<Integer, Object> values = new HashMap<>();
-        values.put(1,customer.getName());
-        values.put(2,customer.getPhone());
-        values.put(3,customer.getCity());
-        values.put(4,customer.isVip());
-        values.put(5,customer.isUrgent());
-        values.put(6,customer.getId());
+        values.put(1, customer.getName());
+        values.put(2, customer.getPhone());
+        values.put(3, customer.getCity());
+        values.put(4, customer.isVip());
+        values.put(5, customer.isUrgent());
+        values.put(6, customer.getId());
 
-        return DBtools.runQuery(DBmanager.UPDATE_CUSTOMER,values);
+        return DBtools.runQuery(DBmanager.UPDATE_CUSTOMER, values);
     }
 
-    @Override
-    public List<Customer> getAllCustomers() {
+
+    public List<Customer> getCustomers(String sql, Map<Integer, Object> values) {
         List<Customer> customers = new ArrayList<>();
-        ResultSet resultSet = DBtools.runQueryForResult(DBmanager.GET_ALL_CUSTOMER);
+        ResultSet resultSet = DBtools.runQueryForResult(sql,values);
         try {
             while (resultSet.next()) {
                 Customer customer = new Customer(
-
+                        resultSet.getInt("id"),
+                        resultSet.getString("name"),
+                        resultSet.getString("phone"),
+                        resultSet.getString("city"),
+                        resultSet.getBoolean("vip"),
+                        resultSet.getBoolean("urgent")
                 );
                 customers.add(customer);
             }
@@ -89,9 +94,35 @@ public class Customer_mysql implements CustomerDao {
         return customers;
     }
 
-    @Override
-    public Customer getCustomerById(int id) {
 
-        return null;
+    /*
+    public Customer getCustomerById(int id) {
+        Customer customer = null;
+
+        Connection connection = null;
+        try{
+            connection = ConnectionPool.getInstance().getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(DBmanager.GET_SINGLE_CUSTOMER);
+            preparedStatement.setInt(1,id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()){
+                 customer = new Customer(
+                        resultSet.getInt("id"),
+                        resultSet.getString("name"),
+                        resultSet.getString("phone"),
+                        resultSet.getString("city"),
+                        resultSet.getBoolean("vip"),
+                        resultSet.getBoolean("urgent")
+                );
+            }
+        } catch (InterruptedException e) {
+            System.out.println(e.getMessage());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            ConnectionPool.getInstance().returnConnection(connection);
+        }
+        return customer;
     }
+    */
 }
