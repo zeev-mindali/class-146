@@ -24,7 +24,7 @@ public class repair_scanner implements Runnable{
             for(Drones item:drones){
                 if (!item.isPoped()){
                     //check date
-                    item.getEta().before(new Date(System.currentTimeMillis())){
+                    if (item.getEta().before(new Date(System.currentTimeMillis()))){
                         item.setPoped(true);
                         System.out.println("DRONE IS READY !!!!!\n====================\n"+item);
                         //anonymous thread
