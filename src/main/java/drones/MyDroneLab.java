@@ -1,51 +1,75 @@
 package drones;
 
-import drones.DB.ConnectionPool;
+import drones.DB.DBmanager;
 import drones.DB.DBtools;
-import drones.DB.SQLexamples;
-import drones.beans.Student;
+import drones.beans.Customer;
+import drones.beans.Drones;
+import drones.dao.CustomerDao;
+import drones.dao.DroneDao;
+import drones.dbdao.Customer_mysql;
+import drones.dbdao.Drone_mysql;
+import drones.jobs.RepairScanner;
 
 
-import java.sql.SQLException;
+import java.util.*;
 
 public class MyDroneLab {
     public static void main(String[] args) {
-        ConnectionPool cp1 = null, cp2 = null, cp3 = null;
-        //ConnectionPool cp = new ConnectionPool();
+//        boolean allOK = DBtools.runQuery(DBmanager.CREATE_DB);
+//        System.out.println("command run successfully: "+allOK);
 
-        cp1 = ConnectionPool.getInstance(); //here we created instance
-        cp2 = ConnectionPool.getInstance(); //here we use existing instance
-        cp3 = ConnectionPool.getInstance(); //here we use existing instance
+//        boolean allOK = DBtools.runQuery(DBmanager.DROP_DB);
+//        System.out.println("command run successfully: "+allOK);
 
+        boolean allOK = DBtools.runQuery(DBmanager.CREATE_CUSTOMER_TABLE);
+        System.out.println("command run successfully: "+allOK);
 
-        /*
-        cp1.showMeTheMoney();
-        cp2.showMeTheMoney();
-        cp3.showMeTheMoney();
+        allOK = DBtools.runQuery(DBmanager.CREATE_DRONES_TABLE);
+        System.out.println("command run successfully: "+allOK);
 
-        System.out.println(cp1);
-        System.out.println(cp2);
-        System.out.println(cp3);
-        */
+        //Customer customer = new Customer(7,"Yoav Hacmon....","050-724-4372","Karnei Shomron",true,true);
 
-        /*
-        try {
-            DBtools.runQuery("INSERT INTO student (name,phone,city,course) VALUES ('Guy','052-111-2222','Kadima', 'full stack java')");
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        */
-
-        //Student student = new Student(0,"Geri G.","050-123-6543","Ramat ha golan","Java Full Stack",37);
-        //System.out.println("all is ok? "+SQLexamples.addStudent(student));
-        SQLexamples.deleteById(15);
-        SQLexamples.deleteById(16);
+        CustomerDao dbCustomer = new Customer_mysql();
+        //dbCustomer.addCustomer(customer);
+        //dbCustomer.updateCustomer(customer);
+        //dbCustomer.deleteCustomer(6);
 
 
-        try {
-            ConnectionPool.getInstance().closeAllConnection();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+
+        //Customer talBechor = dbCustomer.getCustomerById(100);
+        //System.out.println(talBechor==null?"User not found":talBechor);
+        Map<Integer,Object> values = new HashMap<>();
+        values.put(1,"TLV");
+        List<Customer> allCustomers = dbCustomer.getCustomers(DBmanager.GET_ALL_CITY,values);
+        allCustomers.forEach(System.out::println);
+
+
+        //running thread...
+        Drone_mysql dronesDBdao = new Drone_mysql();
+        Set<Drones> drones = dronesDBdao.getAllDrones();
+
+        //RUNNABLE !!!!!!
+        RepairScanner droneScanner = new RepairScanner(drones);
+        //THREAD !!!!!
+        Thread theScanner = new Thread(droneScanner);
+        //START THE B****
+        theScanner.start();
+
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
