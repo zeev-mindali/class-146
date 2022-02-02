@@ -24,7 +24,7 @@ public abstract class Client extends Person{
 
     //methods
 
-    protected float getInterestRate() {
+    public float getInterestRate() {
         return interestRate;
     }
 
@@ -32,11 +32,14 @@ public abstract class Client extends Person{
         this.interestRate = interestRate;
     }
 
-    protected Account getAccount() {
+    public Account getAccount() {
         return account;
     }
 
     protected void setAccount(Account account) {
         this.account = account;
     }
+
+
+
 }

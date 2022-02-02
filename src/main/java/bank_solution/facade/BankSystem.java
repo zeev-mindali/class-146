@@ -1,28 +1,31 @@
 package bank_solution.facade;
 
 import bank_solution.beans.Client;
+import bank_solution.beans.Person;
 import bank_solution.beans.RegularClient;
 import bank_solution.beans.VipClient;
 import bank_solution.dao.Bankable;
 import bank_solution.threads.InterestTask;
 
-import java.util.Scanner;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.*;
 
 public class BankSystem implements Bankable {
     //private InterestTask task;
-    private Set<Client> client;
+    private Set<Client> client = new TreeSet<>(new Comparator<Client>() {
+        @Override
+        public int compare(Client o1, Client o2) {
+            return Double.compare(o1.getAccount().getBalance(), o2.getAccount().getBalance());
+        }
+    });
     private static Scanner scanner = new Scanner(System.in);
-
+    private Client singleClient;
     public BankSystem() {
         /*
         this.task = new InterestTask();
         Thread thread = new Thread(this.task);
         thread.start();
          */
-        new Thread(new InterestTask()).start();
-        this.client = new TreeSet<>();
+        new Thread(new InterestTask(this.client)).start();
     }
 
     @Override
@@ -48,6 +51,7 @@ public class BankSystem implements Bankable {
         showMenu();
         int choice = 0;
         do {
+            scanner.nextLine();
             choice = scanner.nextInt();
             switch (choice) {
                 case 1:
@@ -82,15 +86,17 @@ public class BankSystem implements Bankable {
 
                 case 6:
                     //find tachun
+                    System.out.println(BankStatistics.getRichestClient(new ArrayList<>(this.client)));
                     break;
 
                 case 7:
                     //find omer
+                    System.out.println(BankStatistics.getPoorestClient(new ArrayList<>(this.client)));
                     break;
 
                 case 8:
                     //get money in the bank (how much to steal)
-
+                    System.out.println(BankStatistics.getBankBalance());
                     break;
 
                 case 9:
@@ -106,34 +112,69 @@ public class BankSystem implements Bankable {
 
     @Override
     public void endSystem() {
-
+        //kill thread
+        System.exit(0);
     }
 
     @Override
     public void addClient(Client client) {
-
+        this.client.add(client);
     }
 
     @Override
     public void deleteClient(int id) {
-
+        for (Client item:this.client){
+            Person person = (Person)item;
+            if (person.getId()==id){
+                this.client.remove(item);
+                Person.totalUsers--;
+            }
+        }
     }
 
     @Override
     public void withdraw(double amount) {
-
+        Client myClient = getClientId();
+        if (myClient==null){
+            System.out.println("Client not existssssss");
+            return;
+        }
+        if (myClient.getAccount().getBalance()-amount>=0) {
+            Person.totalSum -= amount;
+            myClient.getAccount().setBalance(myClient.getAccount().getBalance() - amount);
+        } else {
+            System.out.println("Not enough money, go learn JAVA full stack");
+            System.out.println("Or ask tachun for some money......");
+        }
     }
 
     @Override
     public void deposite(double amount) {
-
+        Client myClient = getClientId();
+        if (myClient==null){
+            System.out.println("Client not existssssss");
+            return;
+        }
+        Person.totalSum+=amount;
+        myClient.getAccount().setBalance(myClient.getAccount().getBalance()+amount);
     }
 
     @Override
     public void printAll() {
-
+        for (Client item:this.client){
+            System.out.println(item);
+        }
     }
 
-    //methods
-
+    private Client getClientId(){
+        System.out.println("Enter client id:");
+        int clientId = scanner.nextInt();
+        for (Client client:this.client){
+            Person person = (Person)client;
+            if (person.getId()==clientId){
+                return client;
+            }
+        }
+        return null;
+    }
 }

@@ -8,12 +8,16 @@ public abstract class Person {
     protected double age;
     protected int id;
 
+    public static int totalUsers=0;
+    public static double totalSum=0;
+
     //C'tor
 
     public Person(double age) {
         this.id=counter++;
         this.name="Client "+ id;
         this.age=age;
+        totalUsers++;
     }
 
     public Person(String name, double age) {
@@ -21,6 +25,7 @@ public abstract class Person {
         this.id=counter;
         this.name = name;
         this.age = age;
+        totalUsers++;
     }
 
     //Methods
@@ -33,7 +38,7 @@ public abstract class Person {
         return counter;
     }
 
-    protected String getName() {
+    public String getName() {
         return name;
     }
 
@@ -41,7 +46,7 @@ public abstract class Person {
         return age;
     }
 
-    protected int getId() {
+    public int getId() {
         return id;
     }
 
@@ -52,4 +57,5 @@ public abstract class Person {
     protected void setAge(double age) {
         this.age = age;
     }
+
 }
