@@ -1,7 +1,7 @@
 package junit_demo;
 
 import junit.framework.TestCase;
-import junit_demo_classes.Person;
+import junit.Person;
 
 public class InsideTests extends TestCase {
     private Person person1,person2;

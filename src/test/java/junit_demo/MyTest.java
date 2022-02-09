@@ -1,7 +1,7 @@
 package junit_demo;
 
 import junit.framework.TestCase;
-import junit_demo_classes.MyCalculator;
+import junit.MyCalculator;
 
 public class MyTest extends TestCase {
     public void testPowerVer1(){

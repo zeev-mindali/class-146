@@ -1,9 +1,6 @@
 package drones.dbdao;
 
-import drones.DB.ConnectionPool;
-import drones.DB.DBmanager;
-import drones.DB.DBtools;
-import drones.beans.Customer;
+
 import drones.dao.CustomerDao;
 
 import java.sql.Connection;
@@ -13,6 +10,7 @@ import java.sql.SQLException;
 import java.util.*;
 
 public class Customer_mysql implements CustomerDao {
+    /*
     @Override
     public boolean addCustomer(Customer customer) {
         //Omer yesterday

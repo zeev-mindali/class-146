@@ -1,9 +1,9 @@
 package company_demo;
 
-import lab_solution.Company;
-import lab_solution.Employee;
-import lab_solution.Manager;
-import lab_solution.NoEmployeesException;
+import solutions.lab_solution.Company;
+import solutions.lab_solution.Employee;
+import solutions.lab_solution.Manager;
+import solutions.lab_solution.NoEmployeesException;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
