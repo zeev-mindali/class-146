@@ -1,5 +1,8 @@
 package enums;
 
+import generic_classes.Animal;
+import generic_classes.AnimalPrinter;
+
 import java.util.concurrent.BlockingDeque;
 
 public class Tester {
@@ -36,8 +39,12 @@ public class Tester {
 
          */
 
-        Bulbs myBulb = Bulbs.W12;
-        System.out.println(myBulb+":"+myBulb.getOldBulb()+"W");
-        System.out.println(Bulbs.W12.ordinal()); //location
+        //Bulbs myBulb = Bulbs.W12;
+        //System.out.println(myBulb+":"+myBulb.getOldBulb()+"W");
+        //System.out.println(Bulbs.W12.ordinal()); //location
+        //AnimalPrinter<Animal> myAnimal;
+
     }
+
+
 }
