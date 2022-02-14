@@ -5,6 +5,7 @@ import functional_programing_in_action.beans.Person;
 import functional_programing_in_action.mockdata.MockData;
 
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.*;
 import java.util.function.Function;
 import java.util.function.Predicate;
@@ -132,6 +133,27 @@ public class Tester {
         System.out.println(allPersons);
 
         //תרגיל כיתה, תספרו כמה פעמים מופיע שם בתוך הגייסון
+
+
+        Map<String,Long> talSolution = MockData.getPeople().stream()
+                .collect(Collectors.groupingBy(Person::getFirstName,Collectors.counting()));
+
+
+        System.out.println(talSolution);
+
+        int year = LocalDate.now().getYear();
+
+        Map<Integer,Long> talBetterSolution = MockData.getPeople().stream()
+                .collect(Collectors.groupingBy(Person::getAge,Collectors.counting()));
+
+        talBetterSolution.forEach((key,value)->System.out.println("Year :"+(year-key)+" born :"+value) );
+
+
+        /*
+        for (Map.Entry<Integer,Long> item:talBetterSolution.entrySet()){
+            System.out.println("Year :"+(year-item.getKey())+" born :"+item.getValue());
+        }
+        */
 
 
     }
