@@ -11,4 +11,8 @@ import java.util.UUID;
 @NoArgsConstructor
 public class Chip {
     private String chipId = UUID.randomUUID().toString();
+
+    public Chip(String chipId) {
+        this.chipId = chipId;
+    }
 }

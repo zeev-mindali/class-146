@@ -1,5 +1,7 @@
 package com.jb.springproject.beans;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
@@ -10,6 +12,8 @@ import org.springframework.stereotype.Component;
 @Data
 @NoArgsConstructor
 @Scope("prototype")
+@Builder
+@AllArgsConstructor
 public class Student {
     private int id;
     private String name;

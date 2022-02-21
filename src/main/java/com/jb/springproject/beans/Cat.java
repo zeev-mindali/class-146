@@ -1,12 +1,8 @@
 package com.jb.springproject.beans;
 
-import com.jb.springproject.SpringprojectApplication;
-import lombok.AllArgsConstructor;
+import com.jb.springproject.aop.ChipAlert;
 import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.Value;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
@@ -22,4 +18,8 @@ public class Cat {
     @Autowired
     private Chip chip;
 
+    @ChipAlert
+    public void setChip(Chip chip) {
+        this.chip = chip;
+    }
 }

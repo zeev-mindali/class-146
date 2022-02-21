@@ -1,15 +1,23 @@
 package com.jb.springproject;
 
-import com.jb.springproject.beans.*;
+
+import com.jb.springproject.data.Student;
+import com.jb.springproject.repository.StudentRepository;
+import com.jb.springproject.util.Art;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
-@SpringBootApplication //componentScan("com.jb.*") , configurationScan
+@SpringBootApplication 	//componentScan("com.jb.*") , configurationScan
+@EnableAspectJAutoProxy	//aop - Aspect Oriented Programming.....
 public class SpringprojectApplication {
 
+
 	public static void main(String[] args) {
-		ApplicationContext ctx =  SpringApplication.run(SpringprojectApplication.class, args);
+		SpringApplication.run(SpringprojectApplication.class, args);
+		//ApplicationContext ctx =
 //		MySingleTon mySingleTon1 = ctx.getBean(MySingleTon.class);
 //		MySingleTon mySingleTon2 = ctx.getBean(MySingleTon.class);
 //
@@ -57,11 +65,40 @@ public class SpringprojectApplication {
 //		Teachable teacher4 = ctx.getBean("golan",Teachable.class);
 //		teacher4.info();
 
-		Cat cat = ctx.getBean(Cat.class);
-		System.out.println(cat);
+//		Phone phone = ctx.getBean(Phone.class);
+//		System.out.println(phone);
 
-		Phone phone = ctx.getBean(Phone.class);
-		System.out.println(phone);
+
+//		Cat cat = ctx.getBean(Cat.class);
+//		System.out.println(cat);
+//
+//		cat.setChip(new Chip("This is a fake chip"));
+//
+//		System.out.println(cat);
+//
+//
+//		Cat cat2 = ctx.getBean(Cat.class);
+//		System.out.println(cat2);
+//
+//		Student student = Student.builder()
+//				.id(5)
+//				.grade(100)
+//				.name("Oren")
+//				.lName("Levi")
+//				.add("TelAviv")
+//				.build();
+//
+//		Student student2 = Student.builder()
+//				.id(10)
+//				.name("Tal")
+//				.build();
+//
+//
+//		System.out.println(student);
+//		System.out.println(student2);
+
+
+
 	}
 
 }
