@@ -1,4 +1,4 @@
-package com.jb.springproject;
+package com.jb.springproject.interceptor;
 
 import com.jb.springproject.beans.Cat;
 import com.jb.springproject.beans.Phone;
