@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 import java.util.List;
 
-@Component
+//@Component
 @Order(1)
 public class Test implements CommandLineRunner {
 

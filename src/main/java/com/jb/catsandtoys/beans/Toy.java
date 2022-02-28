@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 @Builder
 @Scope("prototype")
 public class Toy {
-    //i not your toy.....
+    //i am not your toy.....
     private String toyName;
     private String color;
     private boolean hasSound;
