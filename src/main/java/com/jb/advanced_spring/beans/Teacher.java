@@ -20,8 +20,7 @@ public class Teacher {
     private String name;
     private String phoneNumber;
 
-//    @Singular("student")
-//    @JoinColumn(name = "teacher",referencedColumnName = "id")
-//    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-//    private List<Student> studentList;
+    @Singular("student")
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<Student> studentList;
 }

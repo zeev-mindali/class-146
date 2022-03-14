@@ -1,6 +1,7 @@
 package com.jb.advanced_spring.controller;
 
 import com.jb.advanced_spring.beans.Student;
+import com.jb.advanced_spring.exception.StudentException;
 import com.jb.advanced_spring.service.StudentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -30,6 +31,18 @@ public class StudentController {
         System.out.println("Savind new student");
         studentService.saveStudent(student);
         return new ResponseEntity<>(HttpStatus.CREATED);
+    }
+
+    @PutMapping("/update")
+    @ResponseStatus(code = HttpStatus.ACCEPTED)
+    public void updateStudent(@RequestBody Student student) throws StudentException {
+        studentService.updateStudent(student);
+    }
+
+    @DeleteMapping("/delete/{id}")
+    @ResponseStatus(code = HttpStatus.ACCEPTED)
+    public void deleteStudent(@PathVariable int id) throws StudentException {
+        studentService.deleteStudent(id);
     }
 
 }

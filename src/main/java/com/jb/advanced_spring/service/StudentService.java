@@ -1,6 +1,7 @@
 package com.jb.advanced_spring.service;
 
 import com.jb.advanced_spring.beans.Student;
+import com.jb.advanced_spring.exception.StudentException;
 import com.jb.advanced_spring.repository.StudentRepo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -22,5 +23,21 @@ public class StudentService {
 
     public void saveStudent(Student student){
         studentRepo.save(student);
+    }
+
+    public void updateStudent(Student student) throws StudentException {
+        if (studentRepo.existsById(student.getId())){
+            studentRepo.save(student);
+        } else {
+            throw new StudentException("Student not found");
+        }
+    }
+
+    public void deleteStudent(int id) throws StudentException {
+        if (studentRepo.existsById(id)) {
+            studentRepo.deleteById(id);
+        } else {
+            throw new StudentException("Student not found");
+        }
     }
 }
