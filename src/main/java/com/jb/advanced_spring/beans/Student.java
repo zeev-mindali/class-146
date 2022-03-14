@@ -18,7 +18,7 @@ import java.sql.Date;
 @ToString
 public class Student {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.TABLE)
     @Column(name="student_id")
     private int id;
     @Column(length = 40, nullable = false)

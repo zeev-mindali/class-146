@@ -5,6 +5,7 @@ import com.jb.advanced_spring.beans.Student;
 import com.jb.advanced_spring.beans.Teacher;
 import com.jb.advanced_spring.repository.StudentRepo;
 import com.jb.advanced_spring.repository.TeacherRepo;
+import com.jb.advanced_spring.service.StudentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.ApplicationContext;
@@ -14,13 +15,14 @@ import org.springframework.stereotype.Component;
 import java.sql.Date;
 import java.util.List;
 
-@Component
+//@Component
 @Order(1)
 @RequiredArgsConstructor
 public class Test1 implements CommandLineRunner {
     private final ApplicationContext ctx;
     private final StudentRepo studentRepo;
     private final TeacherRepo teacherRepo;
+    private final StudentService studentService;
 
     @Override
     public void run(String... args) throws Exception {
@@ -70,34 +72,39 @@ public class Test1 implements CommandLineRunner {
                 .build();
 
         List<Student> studentList = List.of(golan, tal, Omer, Oren, Lea);
+        System.out.println("Saving students");
+        studentRepo.saveAll(studentList);
 
-        //studentRepo.saveAll(studentList);
-
-        Teacher zeev = Teacher.builder()
-                .name("zeevik the fox")
-                .phoneNumber("052-404-3142")
-                .studentList(studentList)
-                .build();
-
-
-        //teacherRepo.save(zeev);
-
-        Teacher teacherTal = Teacher.builder()
-                .name("Tal Bechor")
-                .phoneNumber("055-555-5555")
-                .student(Student.builder().gender(Gender.MALE).grade(100).age(27).name("Omer Moyal").build())
-                .student(Lea)
-                .build();
+//        Teacher zeev = Teacher.builder()
+//                .name("zeevik the fox")
+//                .phoneNumber("052-404-3142")
+//                .studentList(studentList)
+//                .build();
+//
+//
+//
+//
+//        Teacher teacherTal = Teacher.builder()
+//                .name("Tal Bechor")
+//                .phoneNumber("055-555-5555")
+//                .studentList(List.of(Oren,Lea))
+//                .build();
 
 
         //teacherRepo.save(teacherTal);
 
-        teacherRepo.saveAll(List.of(zeev,teacherTal));
+
+//        teacherRepo.save(zeev);
+        //teacherRepo.saveAll(List.of(zeev));
         //CREATE
 
 
         //CREATE
         //studentRepo.saveAll(List.of(golan,tal,Oren,Omer,Lea));
-
+//        System.out.println("===================================");
+//        System.out.println("All students in the system");
+//        studentService.getAllStudents().forEach(System.out::println);
+//
+//        System.out.println(studentService.getStudentById(2));
     }
 }

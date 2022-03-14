@@ -9,7 +9,7 @@ import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 @Order(4)
-@Component
+//@Component
 @RequiredArgsConstructor
 public class Test4 implements CommandLineRunner {
     private final TeacherRepo teacherRepo;
