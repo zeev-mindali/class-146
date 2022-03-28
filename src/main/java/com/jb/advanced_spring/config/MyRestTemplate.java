@@ -15,7 +15,7 @@ public class MyRestTemplate {
                 //set connection timeout for 3 sec.
                 .setConnectTimeout(Duration.ofMillis(3_000))
                 //set read timeout for 3 sec.
-                .setReadTimeout(Duration.ofMillis(3_000))
+                .setReadTimeout(Duration.ofSeconds(10))
                 .build();
     }
 
