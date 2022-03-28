@@ -8,7 +8,7 @@ import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
-@Component
+//@Component
 @Order(1)
 @RequiredArgsConstructor
 public class GetPojo implements CommandLineRunner {

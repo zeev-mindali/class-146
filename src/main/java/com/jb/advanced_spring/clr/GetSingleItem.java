@@ -11,7 +11,7 @@ import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
-@Component
+//@Component
 @Order(2)
 @RequiredArgsConstructor
 public class GetSingleItem implements CommandLineRunner {
@@ -23,8 +23,11 @@ public class GetSingleItem implements CommandLineRunner {
     public void run(String... args) throws Exception {
         String data = restTemplate.getForObject(url,String.class);
         System.out.println(data);
-        String record = new JSONObject(data).getJSONObject("result")
-                .getJSONArray("records").get(0).toString();
+        String record = new JSONObject(data)
+                .getJSONObject("result")
+                .getJSONArray("records")
+                .getJSONObject(0)
+                .toString();
         System.out.println(record);
         Mishtaken single = objectMapper.readValue(record,Mishtaken.class);
         TablePrinter.print(single);

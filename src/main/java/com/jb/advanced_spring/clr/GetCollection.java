@@ -14,7 +14,7 @@ import org.springframework.web.client.RestTemplate;
 import java.util.ArrayList;
 import java.util.List;
 
-@Component
+//@Component
 @Order(3)
 @RequiredArgsConstructor
 public class GetCollection implements CommandLineRunner {

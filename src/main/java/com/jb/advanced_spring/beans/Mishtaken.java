@@ -1,6 +1,7 @@
 package com.jb.advanced_spring.beans;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -20,7 +21,8 @@ import java.sql.Date;
 )
 
 public class Mishtaken {
-    private int WinnersMeshapryDiur;
+    @JsonProperty("WinnersMeshapryDiur")
+    private int winnersMeshapryDiur;
     private int WinnersHasryDiur;
     private int WinnersSeriesC;
     private int WinnersSeriesB;
