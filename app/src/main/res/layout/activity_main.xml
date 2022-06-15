@@ -47,10 +47,12 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:id="@+id/num2"
+                android:onClick="onClick">
 
                 <TextView
-                    android:id="@+id/num2"
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
@@ -61,16 +63,18 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:id="@+id/num3"
+                android:onClick="onClick">
 
                 <TextView
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:text="3"
                     android:textColor="@color/yoav"
-                    android:textSize="60sp"
-                    android:id="@+id/num3"/>
+                    android:textSize="60sp" />
             </RelativeLayout>
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -95,44 +99,50 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:id="@+id/num4"
+                android:onClick="onClick">
 
                 <TextView
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:text="4"
                     android:textColor="@color/yoav"
-                    android:textSize="60sp"
-                    android:id="@+id/num4"/>
+                    android:textSize="60sp" />
             </RelativeLayout>
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:id="@+id/num5"
+                android:onClick="onClick">
 
                 <TextView
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:text="5"
                     android:textColor="@color/yoav"
-                    android:textSize="60sp"
-                    android:id="@+id/num5"/>
+                    android:textSize="60sp" />
             </RelativeLayout>
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:id="@+id/num6"
+                android:onClick="onClick">
 
                 <TextView
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:text="6"
                     android:textColor="@color/yoav"
-                    android:textSize="60sp"
-                    android:id="@+id/num6"/>
+                    android:textSize="60sp" />
             </RelativeLayout>
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -157,10 +167,11 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:id="@+id/num7"
+                android:onClick="onClick">
 
                 <TextView
-                    android:id="@+id/num7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
@@ -171,10 +182,12 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:onClick="onClick"
+                android:id="@+id/num8">
 
                 <TextView
-                    android:id="@+id/num8"
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
@@ -185,10 +198,12 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:id="@+id/num9"
+                android:onClick="onClick">
 
                 <TextView
-                    android:id="@+id/num9"
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
@@ -235,10 +250,12 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:id="@+id/num0"
+                android:onClick="onClick">
 
                 <TextView
-                    android:id="@+id/num0"
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
