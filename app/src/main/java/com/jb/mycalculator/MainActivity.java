@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private TextView sum;
@@ -81,15 +82,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             //operations : /-div *-mul - min + plus
             case R.id.div:
-
+                totalSum = myNum;
+                opr = '/';
+                myNum = 0;
                 break;
 
             case R.id.mul:
-
+                totalSum = myNum;
+                opr = '*';
+                myNum = 0;
                 break;
 
             case R.id.min:
-
+                totalSum = myNum;
+                opr = '-';
+                myNum = 0;
                 break;
             case R.id.plus:
                 totalSum = myNum;
@@ -98,27 +105,38 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.clr:
                 myNum = 0;
+                break;
+            case R.id.ce:;
+                myNum=0;
+                totalSum=0;
+                opr=' ';
+                break;
 
             case R.id.eql:
+                if (opr==' ') return;
                 switch (opr) {
                     case '+':
                         myNum+=totalSum;
                         break;
                     case '-':
-
+                        myNum=totalSum-myNum;
                         break;
-
                     case '*':
-
+                        myNum*=totalSum;
                         break;
 
                     case '/':
-
+                        if (myNum==0) {
+                            Toast.makeText(this, "Can't divide by zero !!", Toast.LENGTH_LONG).show();
+                            return;
+                        }
+                        myNum=totalSum/myNum;
                         break;
                     default:
                         sum.setText("WTF??");
                         return;
                 }
+                opr=' ';
         }
 
         sum.setText(String.valueOf(myNum));
