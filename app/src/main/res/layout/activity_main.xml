@@ -79,16 +79,18 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:id="@+id/div"
+                android:onClick="onClick">
 
                 <TextView
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:text="/"
                     android:textColor="@color/teal_200"
-                    android:textSize="60sp"
-                    android:id="@+id/div"/>
+                    android:textSize="60sp" />
             </RelativeLayout>
         </LinearLayout>
         <LinearLayout
@@ -147,7 +149,9 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:id="@+id/mul"
+                android:onClick="onClick">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -155,8 +159,7 @@
                     android:layout_centerInParent="true"
                     android:text="*"
                     android:textColor="@color/teal_200"
-                    android:textSize="60sp"
-                    android:id="@+id/mul"/>
+                    android:textSize="60sp" />
             </RelativeLayout>
         </LinearLayout>
         <LinearLayout
@@ -214,7 +217,9 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:id="@+id/min"
+                android:onClick="onClick">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -222,8 +227,7 @@
                     android:layout_centerInParent="true"
                     android:text="-"
                     android:textColor="@color/teal_200"
-                    android:textSize="60sp"
-                    android:id="@+id/min"/>
+                    android:textSize="60sp" />
             </RelativeLayout>
         </LinearLayout>
         <LinearLayout
@@ -280,16 +284,18 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:id="@+id/plus"
+                android:onClick="onClick">
 
                 <TextView
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:text="+"
-                    android:textSize="60sp"
                     android:textColor="@color/teal_200"
-                    android:id="@+id/plus"/>
+                    android:textSize="60sp" />
             </RelativeLayout>
         </LinearLayout>
     </LinearLayout>
@@ -297,7 +303,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_weight="1.5">
+        android:layout_weight="1.5"
+        android:id="@+id/eql"
+        android:onClick="onClick">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -305,7 +313,7 @@
                 android:gravity="center"
                 android:textSize="80sp"
                 android:textColor="@color/teal_200"
-                android:id="@+id/eql"
+
                 />
     </LinearLayout>
 </LinearLayout>
