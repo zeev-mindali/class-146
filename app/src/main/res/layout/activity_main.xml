@@ -1,39 +1,43 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/black">
+    android:background="@color/black"
+    android:orientation="vertical">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_weight="1.5">
+        android:layout_weight="1.5"
+        android:orientation="vertical">
+
         <TextView
+            android:id="@+id/sum"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="0.0"
             android:gravity="center_vertical|right"
-            android:textSize="40sp"
             android:padding="16dp"
+            android:text=""
             android:textColor="@color/white"
-            android:id="@+id/sum"
-            />
+            android:textSize="60sp" />
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_weight="0.5">
+        android:layout_weight="0.5"
+        android:orientation="vertical">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
             <RelativeLayout
+                android:id="@+id/num1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:id="@+id/num1"
                 android:onClick="onClick">
 
                 <TextView
@@ -44,11 +48,12 @@
                     android:textColor="@color/yoav"
                     android:textSize="60sp" />
             </RelativeLayout>
+
             <RelativeLayout
+                android:id="@+id/num2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:id="@+id/num2"
                 android:onClick="onClick">
 
                 <TextView
@@ -60,11 +65,12 @@
                     android:textColor="@color/yoav"
                     android:textSize="60sp" />
             </RelativeLayout>
+
             <RelativeLayout
+                android:id="@+id/num3"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:id="@+id/num3"
                 android:onClick="onClick">
 
                 <TextView
@@ -76,32 +82,20 @@
                     android:textColor="@color/yoav"
                     android:textSize="60sp" />
             </RelativeLayout>
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:id="@+id/div"
-                android:onClick="onClick">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:text="/"
-                    android:textColor="@color/teal_200"
-                    android:textSize="60sp" />
-            </RelativeLayout>
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
             <RelativeLayout
+                android:id="@+id/num4"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:id="@+id/num4"
                 android:onClick="onClick">
 
                 <TextView
@@ -113,11 +107,12 @@
                     android:textColor="@color/yoav"
                     android:textSize="60sp" />
             </RelativeLayout>
+
             <RelativeLayout
+                android:id="@+id/num5"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:id="@+id/num5"
                 android:onClick="onClick">
 
                 <TextView
@@ -129,11 +124,12 @@
                     android:textColor="@color/yoav"
                     android:textSize="60sp" />
             </RelativeLayout>
+
             <RelativeLayout
+                android:id="@+id/num6"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:id="@+id/num6"
                 android:onClick="onClick">
 
                 <TextView
@@ -145,32 +141,20 @@
                     android:textColor="@color/yoav"
                     android:textSize="60sp" />
             </RelativeLayout>
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:id="@+id/mul"
-                android:onClick="onClick">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:text="*"
-                    android:textColor="@color/teal_200"
-                    android:textSize="60sp" />
-            </RelativeLayout>
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
             <RelativeLayout
+                android:id="@+id/num7"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:id="@+id/num7"
                 android:onClick="onClick">
 
                 <TextView
@@ -181,12 +165,13 @@
                     android:textColor="@color/yoav"
                     android:textSize="60sp" />
             </RelativeLayout>
+
             <RelativeLayout
+                android:id="@+id/num8"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:onClick="onClick"
-                android:id="@+id/num8">
+                android:onClick="onClick">
 
                 <TextView
 
@@ -197,11 +182,12 @@
                     android:textColor="@color/yoav"
                     android:textSize="60sp" />
             </RelativeLayout>
+
             <RelativeLayout
+                android:id="@+id/num9"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:id="@+id/num9"
                 android:onClick="onClick">
 
                 <TextView
@@ -213,32 +199,20 @@
                     android:textColor="@color/yoav"
                     android:textSize="60sp" />
             </RelativeLayout>
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:id="@+id/min"
-                android:onClick="onClick">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:text="-"
-                    android:textColor="@color/teal_200"
-                    android:textSize="60sp" />
-            </RelativeLayout>
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
             <RelativeLayout
+                android:id="@+id/clr"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:id="@+id/clr"
                 android:onClick="onClick">
 
                 <TextView
@@ -250,11 +224,12 @@
                     android:textColor="@color/purple_200"
                     android:textSize="60sp" />
             </RelativeLayout>
+
             <RelativeLayout
+                android:id="@+id/num0"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:id="@+id/num0"
                 android:onClick="onClick">
 
                 <TextView
@@ -266,55 +241,23 @@
                     android:textColor="@color/yoav"
                     android:textSize="60sp" />
             </RelativeLayout>
+
             <RelativeLayout
+                android:id="@+id/dial"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:id="@+id/ce"
                 android:onClick="onClick">
 
-                <TextView
-
+                <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:src="@drawable/dial"
                     android:layout_centerInParent="true"
-                    android:text="ce"
-                    android:textColor="@color/purple_200"
-                    android:textSize="60sp" />
+                    android:id="@+id/dialerImage"
+                    />
             </RelativeLayout>
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:id="@+id/plus"
-                android:onClick="onClick">
 
-                <TextView
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:text="+"
-                    android:textColor="@color/teal_200"
-                    android:textSize="60sp" />
-            </RelativeLayout>
         </LinearLayout>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_weight="1.5"
-        android:id="@+id/eql"
-        android:onClick="onClick">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="="
-                android:gravity="center"
-                android:textSize="80sp"
-                android:textColor="@color/teal_200"
-
-                />
     </LinearLayout>
 </LinearLayout>
