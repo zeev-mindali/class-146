@@ -5,6 +5,8 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Stack;
 
+
+//mysql:mysql-connector-java:8.0.29
 public class ConnectionPool {
     //number of connection to sql (maximum is 20,default is 10)
     private static final int NUMBER_OF_CONNECTIONS=10;
